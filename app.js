@@ -22,7 +22,7 @@ if ('geolocation' in navigator){
     navigator.geolocation.getCurrentPosition(setPosition, showError);
 }else{
     notificationElement.style.display= "block";
-    notificationElement.innerHtml = "<p>Browser doesn't support Geolocation</p>"
+    notificationElement.innerHTML = "<p>Browser doesn't support Geolocation</p>"
 }
 
 //set user's position
@@ -36,12 +36,12 @@ function setPosition(position){
 //for error msg
 function showError(){
     notificationElement.style.display= "block";
-    notificationElement.innerHtml = "<p>no loction</p>";
+    notificationElement.innerHTML = ` ${error.message}`;
 }
 
 //get weather from API
 function getWeather(latitude, longitude){
-    let api= `http://api.openweathermap.org/data/2.5/weather/?lat=${latitude}&lon=${longitude}&appid=${key}`;
+    let api= `https://api.openweathermap.org/data/2.5/weather/?lat=${latitude}&lon=${longitude}&appid=${key}`;
 
     fetch(api)
         .then(function(response){
