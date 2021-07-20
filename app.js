@@ -36,7 +36,7 @@ function setPosition(position){
 //for error msg
 function showError(){
     notificationElement.style.display= "block";
-    notificationElement.innerHTML = ` ${error.message}`;
+    notificationElement.innerHTML = `<p> User denied location access</p>`;
 }
 
 //get weather from API
